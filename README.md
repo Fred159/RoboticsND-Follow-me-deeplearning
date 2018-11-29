@@ -6,7 +6,8 @@ In order to train a deep learning network, images and labeled mask can be genera
 1. make environment
 2. write encoder, decoder block and fully convolutional neural network.
 3. Tuning the hyperparameters based on loss and final score.
-4. Problems
+4. Results
+5. Problems
 
 #### 1. make environment
 The whole environment was setted up in anaconda virtual environment. With the udacity provided resource, environment was built easily.
@@ -19,6 +20,8 @@ My neural network structure show as below. It is pretty deep and with 1x1 convol
 
 Stride is always [2,2] except in 1x1 convolutional layer. The layer's depth is finally change to 256 with 1x1 convolutional network.
 The 1x1 convolutional network can extract spatial information in 256 layer. After that, in order to get enough information in original image, decoder layers were concatenated with encoder layer by using the 'decoder_block' function.
+
+##### 3. Tuning the hyperparameters based on loss and final score.
 Hyperparamter finally confirmed as below.
 
 ![hyperparamte](https://github.com/Fred159/RoboticsND-Follow-me-deeplearning/blob/master/Project%20Image/hyperparameter.png)
@@ -26,6 +29,41 @@ Hyperparamter finally confirmed as below.
 I also tried other parameter set like below. Overfittig or underfitting happened during training. Those Hyperparameter gave a final score very near to 0.4(like 0.3999), but no one set can gave a score >  0.4
 
 ![other hyperparamter](https://github.com/Fred159/RoboticsND-Follow-me-deeplearning/blob/master/Project%20Image/hyperpara.png)
+
+#### 4. Results
+After training, results shown as below.
+
+![traning loss](https://github.com/Fred159/RoboticsND-Follow-me-deeplearning/blob/master/Project%20Image/trainingloss.png)
+
+And the prediction results shown as below.
+
+![test1](https://github.com/Fred159/RoboticsND-Follow-me-deeplearning/blob/master/Project%20Image/test1.png)
+
+![test2](https://github.com/Fred159/RoboticsND-Follow-me-deeplearning/blob/master/Project%20Image/test2.png)
+
+![test3](https://github.com/Fred159/RoboticsND-Follow-me-deeplearning/blob/master/Project%20Image/test3.png)
+
+Finally , the drone was tested in simulator. simulation results shown as below.
+
+![result1](https://github.com/Fred159/RoboticsND-Follow-me-deeplearning/blob/master/Project%20Image/20181126_151004.jpg)
+
+![result2](https://github.com/Fred159/RoboticsND-Follow-me-deeplearning/blob/master/Project%20Image/20181126_151018.jpg)
+
+![result3](https://github.com/Fred159/RoboticsND-Follow-me-deeplearning/blob/master/Project%20Image/20181126_151037.jpg)
+
+![result4](https://github.com/Fred159/RoboticsND-Follow-me-deeplearning/blob/master/Project%20Image/20181126_151125.jpg)
+
+![result5](https://github.com/Fred159/RoboticsND-Follow-me-deeplearning/blob/master/Project%20Image/20181126_151134.jpg)
+
+
+#### 5. Problems
+
+
+
+
+
+
+
 
 
 
