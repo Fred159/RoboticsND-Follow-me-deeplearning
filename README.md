@@ -14,9 +14,15 @@ The whole environment was setted up in anaconda virtual environment. With the ud
 
 #### 2. write encoder, decoder block and fully convolutional neural network.
 Add encoder and decoder block with TODO hint.
+
 My neural network structure show as below. It is pretty deep and with 1x1 convolutional layer.
 
 ![layer structure](https://github.com/Fred159/RoboticsND-Follow-me-deeplearning/blob/master/Project%20Image/layer.png)
+
+Encoder step is just general convolution process.The convolustion process was implemented to image for extract features of image. The more deeper, the more abstract and important features can be extracted. But why it called encoder? Because, the neural network encode the image in to a feature map with many channels. However, we will lose some spatial information from the origin image since the channel increase. When we compress image with a person, then with convolusion step, each slide window's feature can be extracted. However, spatial information of each pixel is not be extracted.
+So we use 1x1 connvolution layer to extract spatial information from whole channels. After this step, feature map with spatial information is made.We encode image from [160,160,3]  to [10,10.256]<=this is feature. 
+For segmentation problem, we need to upsample the each feature map. This is why we call the process as decoder. Because decoder's feature is using the feature map to recover the original image's size [160,160,3]. The pixel-wise segmentation mission is done.
+When decoder recover, it can't recover the feature map to original image. Because when pooling step and relu step, the feature map actually change a lot, so when recover step, decoder can't upsample the pixel as origin image's accuracy. It means we always lose spatial information of origin image step by step.
 
 Stride is always [2,2] except in 1x1 convolutional layer. The layer's depth is finally change to 256 with 1x1 convolutional network.
 The 1x1 convolutional network can extract spatial information in 256 layer.1x1 convolution layer also can decrease the layers' depth, it make layer can be trained more easily. It give each pixel a specific label, so this 1x1 convolution is the key of pixel wise segmentation problems!
@@ -62,6 +68,8 @@ Finally , the drone was tested in simulator. simulation results shown as below.
 
 ![result5](https://github.com/Fred159/RoboticsND-Follow-me-deeplearning/blob/master/Project%20Image/20181126_151134.jpg)
 
+* One of the question from udacity is"whether this model and data would work well for following another object (dog, cat, car, etc.) instead of a human and if not, what changes would be required?"
+ans: Of course this model can't be used to recognize the cat,dog. This model is only trained to recognize human. If we wan't to recognize the cat or dog, we need to train the network with specific image and labeled image of cat or dog.
 
 #### 5. Problems
 * Deep learning processing is so slow. So it needs many time to tune paramter, however as long as change one parameter, it needs several hours to confirm the result.
@@ -69,6 +77,7 @@ Finally , the drone was tested in simulator. simulation results shown as below.
 * ROS is not used in this project. Maybe drone control is implyed, but I don't figure it out yet.
 * Actually, I think with more train and more data , final score can be increase a lot with more preprocess.
 * Generate image label is pretty hard...
+
 
 
 ------------------------------------------------------------------------------------------------------------------------------
