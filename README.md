@@ -50,6 +50,8 @@ After training, training results shown as below. This traning step took 6hours..
 
 And the prediction results shown as below. Final score is 0.42. 
 
+* Actually, I think model can be enhanced. 1st, change the train data. 2nd, increase train epoch. (Based on train loss figure, I think this model training step can stop at 50epoch.)3rd, make a deeper network.(It needs more time) 4. Add preprocess step in preprocess_ims.py. As far as I know preprocess step is pretty inportant to CNN.
+
 ![test1](https://github.com/Fred159/RoboticsND-Follow-me-deeplearning/blob/master/Project%20Image/test1.png)
 
 ![test2](https://github.com/Fred159/RoboticsND-Follow-me-deeplearning/blob/master/Project%20Image/test2.png)
