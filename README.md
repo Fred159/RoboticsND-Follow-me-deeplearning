@@ -1,5 +1,5 @@
 ## Deep Learning Project -Follow me 
-This project's goal is control a drone track a specific person. In this project deep learning method is used in recognizing person. 
+This project's goal is control a drone track a specific person. In this project deep learning method is used in recognizing person. Pixel-wise segmentation problem.
 In order to train a deep learning network, images and labeled mask can be generated with simulator which udacity provides.(But I just use the data in workspace)
 
 ### Contents
@@ -19,14 +19,21 @@ My neural network structure show as below. It is pretty deep and with 1x1 convol
 ![layer structure](https://github.com/Fred159/RoboticsND-Follow-me-deeplearning/blob/master/Project%20Image/layer.png)
 
 Stride is always [2,2] except in 1x1 convolutional layer. The layer's depth is finally change to 256 with 1x1 convolutional network.
-The 1x1 convolutional network can extract spatial information in 256 layer. After that, in order to get enough information in original image, decoder layers were concatenated with encoder layer by using the 'decoder_block' function.
+The 1x1 convolutional network can extract spatial information in 256 layer.1x1 convolution layer also can decrease the layers' depth, it make layer can be trained more easily. It give each pixel a specific label, so this 1x1 convolution is the key of pixel wise segmentation problems!
+
+![convolution 1x1 feature](https://github.com/Fred159/RoboticsND-Follow-me-deeplearning/blob/master/Project%20Image/1x1%20convolution.jpg)
+
+After that, in order to get enough information in original image, decoder layers were concatenated with encoder layer by using the 'decoder_block' function.
 
 ##### 3. Tuning the hyperparameters based on loss and final score.
 Hyperparamter finally confirmed as below.
 
 ![hyperparamte](https://github.com/Fred159/RoboticsND-Follow-me-deeplearning/blob/master/Project%20Image/hyperparameter.png)
 
-I also tried other parameter set like below. Overfittig or underfitting happened during training. Those Hyperparameter gave a final score very near to 0.4(like 0.3999), but no one set can gave a score >  0.4
+I also tried other parameter set like below. Overfittig or underfitting happened during training. Those Hyperparameter gave a final score very near to 0.4(like 0.3999), but no one set can gave a score >  0.4. 
+batch size was selected with the memory of system.
+epoch was selected by training loss and trail
+steps_per_epoch was selected by 'image number/batch size'
 
 ![other hyperparamter](https://github.com/Fred159/RoboticsND-Follow-me-deeplearning/blob/master/Project%20Image/hyperpara.png)
 
