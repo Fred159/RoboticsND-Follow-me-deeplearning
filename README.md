@@ -31,11 +31,11 @@ I also tried other parameter set like below. Overfittig or underfitting happened
 ![other hyperparamter](https://github.com/Fred159/RoboticsND-Follow-me-deeplearning/blob/master/Project%20Image/hyperpara.png)
 
 #### 4. Results
-After training, results shown as below.
+After training, training results shown as below. This traning step took 6hours......
 
 ![traning loss](https://github.com/Fred159/RoboticsND-Follow-me-deeplearning/blob/master/Project%20Image/trainingloss.png)
 
-And the prediction results shown as below.
+And the prediction results shown as below. Final score is 0.42. 
 
 ![test1](https://github.com/Fred159/RoboticsND-Follow-me-deeplearning/blob/master/Project%20Image/test1.png)
 
@@ -57,15 +57,14 @@ Finally , the drone was tested in simulator. simulation results shown as below.
 
 
 #### 5. Problems
+* Deep learning processing is so slow. So it needs many time to tune paramter, however as long as change one parameter, it needs several hours to confirm the result.
+* Preprocess_ims.py file can't run correctly with anaconda virtual environment. I don't know how to fix that problem, so I couldn't generate extrac dataset.
+* ROS is not used in this project. Maybe drone control is implyed, but I don't figure it out yet.
+* Actually, I think with more train and more data , final score can be increase a lot with more preprocess.
+* Generate image label is pretty hard...
 
 
-
-
-
-
-
-
-
+------------------------------------------------------------------------------------------------------------------------------
 
 
 
