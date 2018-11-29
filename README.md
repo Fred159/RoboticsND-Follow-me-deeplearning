@@ -3,11 +3,20 @@ This project's goal is control a drone track a specific person. In this project 
 In order to train a deep learning network, images and labeled mask can be generated with simulator which udacity provides.(But I just use the data in workspace)
 
 ### Contents
-1. write encoder, decoder block and fully convolutional neural network.
-2. Tuning the hyperparameters based on loss and final score.
-3. Problems
+1. make environment
+2. write encoder, decoder block and fully convolutional neural network.
+3. Tuning the hyperparameters based on loss and final score.
+4. Problems
 
-# 
+#### 1. make environment
+The whole environment was setted up in anaconda virtual environment. With the udacity provided resource, environment was built easily.
+
+#### 2. write encoder, decoder block and fully convolutional neural network.
+Add encoder and decoder block with TODO hint.
+My neural network structure show as below. It is pretty deep and with 1x1 convolutional layer.
+
+
+
 
 
 
