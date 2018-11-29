@@ -1,3 +1,16 @@
+## Deep Learning Project -Follow me 
+This project's goal is control a drone track a specific person. In this project deep learning method is used in recognizing person. 
+In order to train a deep learning network, images and labeled mask can be generated with simulator which udacity provides.(But I just use the data in workspace)
+
+### Contents
+1. write encoder, decoder block and fully convolutional neural network.
+2. Tuning the hyperparameters based on loss and final score.
+3. Problems
+
+# 
+
+
+
 [![Udacity - Robotics NanoDegree Program](https://s3-us-west-1.amazonaws.com/udacity-robotics/Extra+Images/RoboND_flag.png)](https://www.udacity.com/robotics)
 
 ## Deep Learning Project ##
